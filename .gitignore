@@ -1,3 +1,9 @@
 /target/
 **/*.rs.bk
 Cargo.lock
+.idea
+.openapi-generator
+.travis.yml
+.openapi-generator-ignore
+code-gen
+git_push.sh
