@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 /// OpenAiUsage : Usage interface of OpenAI for improved compatibility.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct OpenAiUsage {
     #[serde(rename = "promptTokens", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub prompt_tokens: Option<Option<i32>>,

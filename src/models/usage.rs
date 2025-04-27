@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 /// Usage : (Deprecated. Use usageDetails and costDetails instead.) Standard interface for usage and cost
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct Usage {
     /// Number of input units (e.g. tokens)
     #[serde(rename = "input", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]

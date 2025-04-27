@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 /// ApiKeySummary : Summary of an API key
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct ApiKeySummary {
     #[serde(rename = "id")]
     pub id: String,

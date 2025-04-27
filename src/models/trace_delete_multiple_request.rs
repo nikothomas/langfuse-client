@@ -12,6 +12,7 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct TraceDeleteMultipleRequest {
     /// List of trace IDs to delete
     #[serde(rename = "traceIds")]

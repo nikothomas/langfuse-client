@@ -12,6 +12,7 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct PromptOneOf {
     #[serde(rename = "prompt")]
     pub prompt: Vec<models::ChatMessage>,

@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 /// Model : Model definition used for transforming usage into USD cost and/or tokenization.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct Model {
     #[serde(rename = "id")]
     pub id: String,

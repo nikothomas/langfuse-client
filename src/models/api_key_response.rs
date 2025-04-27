@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 /// ApiKeyResponse : Response for API key creation
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct ApiKeyResponse {
     #[serde(rename = "id")]
     pub id: String,

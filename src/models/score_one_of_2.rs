@@ -12,6 +12,7 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct ScoreOneOf2 {
     /// The numeric value of the score. Equals 1 for \"True\" and 0 for \"False\"
     #[serde(rename = "value")]

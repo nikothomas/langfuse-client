@@ -12,6 +12,7 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct GetMediaUploadUrlResponse {
     /// The presigned upload URL. If the asset is already uploaded, this will be null
     #[serde(rename = "uploadUrl", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]

@@ -12,6 +12,7 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct GetScoresResponseTraceData {
     /// The user ID associated with the trace referenced by score
     #[serde(rename = "userId", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]

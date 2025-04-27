@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 /// ApiKeyDeletionResponse : Response for API key deletion
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct ApiKeyDeletionResponse {
     #[serde(rename = "success")]
     pub success: bool,

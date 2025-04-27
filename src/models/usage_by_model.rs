@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 /// UsageByModel : Daily usage of a given model. Usage corresponds to the unit set for the specific model (e.g. tokens).
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct UsageByModel {
     #[serde(rename = "model", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub model: Option<Option<String>>,

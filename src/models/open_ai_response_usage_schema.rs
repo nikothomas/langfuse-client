@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 /// OpenAiResponseUsageSchema : OpenAI Usage schema from Response API
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct OpenAiResponseUsageSchema {
     #[serde(rename = "input_tokens")]
     pub input_tokens: i32,

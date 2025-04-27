@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 /// ApiKeyList : List of API keys for a project
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct ApiKeyList {
     #[serde(rename = "apiKeys")]
     pub api_keys: Vec<models::ApiKeySummary>,

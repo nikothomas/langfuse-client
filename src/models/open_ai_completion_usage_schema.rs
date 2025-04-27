@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 /// OpenAiCompletionUsageSchema : OpenAI Usage schema from (Chat-)Completion APIs
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct OpenAiCompletionUsageSchema {
     #[serde(rename = "prompt_tokens")]
     pub prompt_tokens: i32,

@@ -12,6 +12,7 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct PromptVersionUpdateRequest {
     /// New labels for the prompt version. Labels are unique across versions. The \"latest\" label is reserved and managed by Langfuse.
     #[serde(rename = "newLabels")]

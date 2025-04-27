@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 /// ScoreConfig : Configuration for a score
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature="bon", derive(bon::Builder))]
 pub struct ScoreConfig {
     #[serde(rename = "id")]
     pub id: String,
